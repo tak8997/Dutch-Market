@@ -1,3 +1,7 @@
 <resources>
   <string name="app_name">DutchMarket</string>
+  <string name="login">로그인</string>
+  <string name="input_password">비밀번호 입력</string>
+  <string name="input_email">학교 이메일 입력</string>
+  <string name="register">회원으로 가입하기</string>
 </resources>

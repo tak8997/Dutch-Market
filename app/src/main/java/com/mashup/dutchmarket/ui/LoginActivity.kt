@@ -4,11 +4,12 @@ import android.os.Bundle
 import com.mashup.dutchmarket.BaseActivity
 import com.mashup.dutchmarket.R
 
-internal class MainActivity : BaseActivity() {
+internal class LoginActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
+
 
     }
 }
