@@ -11,8 +11,7 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(
         AndroidSupportInjectionModule::class,
         ActivityBindingModule::class,
-        ApplicationModule::class,
-        ApplicationRepositoryModule::class
+        ApplicationModule::class
 ))
 internal interface ApplicationComponent : AndroidInjector<DutchMarket> {
 
