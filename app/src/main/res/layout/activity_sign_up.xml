@@ -6,7 +6,7 @@
   android:background="@color/_FFFFFF"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".ui.login.LoginActivity">
+  tools:context=".ui.login.SignUpActivity">
 
   <android.support.v7.widget.Toolbar
     android:id="@+id/my_toolbar"
@@ -41,8 +41,8 @@
     app:layout_constraintBottom_toTopOf="@+id/password"/>
 
   <EditText
-    android:id="@+id/password"
-    android:text="@string/input_password"
+    android:id="@+id/auth_code"
+    android:text="@string/input_auth_code"
     android:textColor="@color/_D5D5D5"
     android:textSize="14dp"
     android:paddingLeft="26dp"
@@ -57,8 +57,8 @@
     app:layout_constraintBottom_toTopOf="@+id/login"/>
 
   <Button
-    android:id="@+id/login"
-    android:text="@string/login"
+    android:id="@+id/send_auth_code"
+    android:text="@string/send_auth_code"
     android:textColor="@color/_FFFFFF"
     android:textSize="14dp"
     android:background="@drawable/login_button_layout"
@@ -68,17 +68,6 @@
     android:layout_marginRight="24dp"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"/>
-
-  <TextView
-    android:text="@string/register"
-    android:textSize="14dp"
-    android:textColor="@color/_516DC4"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="50dp"
-    app:layout_constraintTop_toBottomOf="@+id/login"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"/>
 </android.support.constraint.ConstraintLayout>

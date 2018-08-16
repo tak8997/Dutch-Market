@@ -1,7 +1,7 @@
 package com.mashup.dutchmarket.di
 
-import com.mashup.dutchmarket.ui.LoginActivity
-import com.mashup.dutchmarket.ui.LoginModule
+import com.mashup.dutchmarket.ui.login.LoginActivity
+import com.mashup.dutchmarket.ui.login.LoginModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

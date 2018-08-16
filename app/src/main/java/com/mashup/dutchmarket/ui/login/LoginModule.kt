@@ -1,4 +1,4 @@
-package com.mashup.dutchmarket.ui
+package com.mashup.dutchmarket.ui.login
 
 import dagger.Module
 

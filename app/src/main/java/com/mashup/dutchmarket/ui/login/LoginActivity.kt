@@ -1,4 +1,4 @@
-package com.mashup.dutchmarket.ui
+package com.mashup.dutchmarket.ui.login
 
 import android.os.Bundle
 import com.mashup.dutchmarket.BaseActivity
