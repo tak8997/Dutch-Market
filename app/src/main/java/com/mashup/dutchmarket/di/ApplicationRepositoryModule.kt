@@ -29,12 +29,13 @@ internal abstract class ApplicationRepositoryModule {
 
         @Provides
         @Singleton
-        fun provideHttpClient(loggingInterceptor: HttpLoggingInterceptor) : OkHttpClient = OkHttpClient.Builder().addInterceptor(loggingInterceptor).build()
+        fun provideHttpClient(loggingInterceptor: HttpLoggingInterceptor) : OkHttpClient = OkHttpClient.Builder()
+                .addInterceptor(loggingInterceptor)
+                .build()
 
         @Provides
         @Singleton
-        fun provideRetrofit(okHttpClient: OkHttpClient) : Retrofit =
-                Retrofit.Builder()
+        fun provideRetrofit(okHttpClient: OkHttpClient) : Retrofit = Retrofit.Builder()
                         .client(okHttpClient)
                         .baseUrl(HttpService.Endpoint.baseUrl)
                         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
