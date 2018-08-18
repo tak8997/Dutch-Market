@@ -3,6 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/drawer_layout"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   tools:openDrawer="start"
@@ -50,6 +51,24 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent">
 
+          <TextView
+            android:textColor="@color/_000000"
+            android:textSize="14dp"
+            android:text="@string/popular_post"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="17dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+          <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_marginTop="23dp"
+            android:layout_marginLeft="17dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+          </android.support.v4.view.ViewPager>
+
         </android.support.constraint.ConstraintLayout>
       </android.support.v4.widget.NestedScrollView>
 
@@ -58,7 +77,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_add"
+        android:elevation="6dp"
+        android:src="@drawable/fab"
+        android:scaleType="fitXY"
+        android:backgroundTint="@color/_516DC4"
         app:fabSize="normal"
         app:layout_anchor="@id/content_container"
         app:layout_anchorGravity="bottom|right|end" />
@@ -71,6 +93,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="start"
     android:fitsSystemWindows="true"
+    tools:visibility="gone"
     app:headerLayout="@layout/nav_header"
     app:menu="@menu/drawer_actions" />
 
