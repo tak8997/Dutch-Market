@@ -3,27 +3,51 @@ package com.mashup.dutchmarket.ui.main
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import com.mashup.dutchmarket.R
 import com.mashup.dutchmarket.data.PopularPost
+import com.mashup.dutchmarket.data.Post
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private val postAdapter: PostAdapter by lazy {
+        PostAdapter()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        intiailizeRecyclerView()
         initializeToolbar()
         initializeListener()
     }
-
 
     override fun onResume() {
         super.onResume()
 
         initializeViewPager()
+    }
+
+    private fun intiailizeRecyclerView() {
+        with(post_recycler) {
+            setHasFixedSize(true)
+
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = postAdapter
+        }
+
+        val dummyPosts = mutableListOf<Post>()
+
+        dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
+        dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
+        dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
+        dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
+
+        postAdapter.addPosts(dummyPosts)
     }
 
     private fun initializeViewPager() {

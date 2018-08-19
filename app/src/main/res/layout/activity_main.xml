@@ -48,14 +48,15 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <android.support.constraint.ConstraintLayout
           android:id="@+id/content_container"
+          android:layout_marginTop="28dp"
           android:layout_width="match_parent"
           android:layout_height="match_parent">
 
           <TextView
+            android:id="@+id/popular_post"
             android:textColor="@color/_000000"
             android:textSize="14dp"
             android:text="@string/popular_post"
-            android:layout_marginTop="28dp"
             android:layout_marginLeft="17dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -65,9 +66,42 @@
             android:layout_marginTop="23dp"
             android:layout_marginLeft="17dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="169dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/popular_post"/>
 
-          </android.support.v4.view.ViewPager>
+          <TextView
+            android:id="@+id/latest_post"
+            android:text="@string/latest_post"
+            android:textColor="@color/_000000"
+            android:layout_marginTop="33dp"
+            android:layout_marginLeft="17dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/pager"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+          <TextView
+            android:id="@+id/more_post"
+            android:text="@string/more_post"
+            android:textColor="@color/_939395"
+            android:layout_marginTop="33dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="17dp"
+            app:layout_constraintTop_toBottomOf="@+id/pager"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+          <android.support.v7.widget.RecyclerView
+            android:id="@+id/post_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            app:layout_constraintTop_toBottomOf="@+id/latest_post"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
 
         </android.support.constraint.ConstraintLayout>
       </android.support.v4.widget.NestedScrollView>
@@ -77,9 +111,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:elevation="6dp"
+        android:elevation="5dp"
         android:src="@drawable/fab"
-        android:scaleType="fitXY"
         android:backgroundTint="@color/_516DC4"
         app:fabSize="normal"
         app:layout_anchor="@id/content_container"
@@ -92,9 +125,34 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_gravity="start"
-    android:fitsSystemWindows="true"
-    tools:visibility="gone"
-    app:headerLayout="@layout/nav_header"
-    app:menu="@menu/drawer_actions" />
+    android:fitsSystemWindows="true">
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
 
+      <include layout="@layout/nav_header" />
+
+      <TextView
+        android:text="@string/category"
+        android:textSize="14dp"
+        android:textColor="@color/_000000"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:layout_marginLeft="30dp"/>
+
+      <ListView
+        android:id="@+id/nav_listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="30dp"/>
+
+    </LinearLayout>
+  </android.support.design.widget.NavigationView>
+
+  <!--android:layout_marginTop="10dp"-->
 </android.support.v4.widget.DrawerLayout>
