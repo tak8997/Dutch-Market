@@ -12,11 +12,11 @@ import com.mashup.dutchmarket.data.Post
 import kotlinx.android.synthetic.main.item_post.view.*
 
 
-internal class PostAdapter : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+internal class PostRecyclerAdapter : RecyclerView.Adapter<PostRecyclerAdapter.ViewHolder>() {
 
     private val posts = mutableListOf<Post>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostAdapter.ViewHolder = ViewHolder(LayoutInflater
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostRecyclerAdapter.ViewHolder = ViewHolder(LayoutInflater
             .from(parent.context)
             .inflate(R.layout.item_post, parent, false))
 

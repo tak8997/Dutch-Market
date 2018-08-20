@@ -13,8 +13,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val postAdapter: PostAdapter by lazy {
-        PostAdapter()
+    private val postAdapter: PostRecyclerAdapter by lazy {
+        PostRecyclerAdapter()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         intiailizeRecyclerView()
+        intializeNavigationList()
         initializeToolbar()
         initializeListener()
     }
@@ -29,7 +30,19 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        initializeViewPager()
+//        initializeViewPager()
+    }
+
+    private fun intializeNavigationList() {
+//        val categories = mutableListOf<String>()
+//
+//        categories.add("의류")
+//        categories.add("잡화")
+//        categories.add("식품")
+//        categories.add("화장품")
+//        categories.add("기타")
+//
+//        nav_listview.adapter = NavigationListAdapter(this, categories)
     }
 
     private fun intiailizeRecyclerView() {
