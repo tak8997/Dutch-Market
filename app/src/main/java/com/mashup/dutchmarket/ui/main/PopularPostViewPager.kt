@@ -12,6 +12,10 @@ internal class PopularPostViewPager(fragmentManger: FragmentManager, private val
 
     override fun getCount(): Int = popularPosts.size
 
+    override fun getPageWidth(position: Int): Float {
+        return 0.6f
+
+    }
 }
 
 

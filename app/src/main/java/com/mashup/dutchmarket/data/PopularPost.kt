@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 
-data class PopularPost(val imageUrl: String, val postTitle: String) : Parcelable {
+data class PopularPost(val postImageUrl: String, val postTitle: String) : Parcelable {
 
     constructor(parcel: Parcel) : this(
             parcel.readString(),
@@ -12,7 +12,7 @@ data class PopularPost(val imageUrl: String, val postTitle: String) : Parcelable
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(imageUrl)
+        parcel.writeString(postImageUrl)
         parcel.writeString(postTitle)
     }
 

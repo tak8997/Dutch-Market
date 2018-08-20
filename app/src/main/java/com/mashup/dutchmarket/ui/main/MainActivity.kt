@@ -30,19 +30,19 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-//        initializeViewPager()
+        initializeViewPager()
     }
 
     private fun intializeNavigationList() {
-//        val categories = mutableListOf<String>()
-//
-//        categories.add("의류")
-//        categories.add("잡화")
-//        categories.add("식품")
-//        categories.add("화장품")
-//        categories.add("기타")
-//
-//        nav_listview.adapter = NavigationListAdapter(this, categories)
+        val categories = mutableListOf<String>()
+
+        categories.add("의류")
+        categories.add("잡화")
+        categories.add("식품")
+        categories.add("화장품")
+        categories.add("기타")
+
+        nav_listview.adapter = NavigationListAdapter(this, categories)
     }
 
     private fun intiailizeRecyclerView() {
@@ -55,6 +55,11 @@ class MainActivity : AppCompatActivity() {
 
         val dummyPosts = mutableListOf<Post>()
 
+        dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
+        dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
+        dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
+        dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
+        dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
         dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
         dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
         dummyPosts.add(Post("", "하하", "2016.09.01까지", 6))
