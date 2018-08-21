@@ -1,15 +1,21 @@
 package com.mashup.dutchmarket.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.AdapterView
+import android.widget.Toast
 import com.mashup.dutchmarket.R
 import com.mashup.dutchmarket.data.PopularPost
 import com.mashup.dutchmarket.data.Post
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,6 +49,17 @@ class MainActivity : AppCompatActivity() {
         categories.add("기타")
 
         nav_listview.adapter = NavigationListAdapter(this, categories)
+        nav_listview.onItemClickListener = AdapterView.OnItemClickListener { adapterView: AdapterView<*>, view1: View, position: Int, id: Long ->
+            val category: String = adapterView.getItemAtPosition(position).toString()
+            Log.d("category__", category.toString())
+            Toast.makeText(this, category, Toast.LENGTH_SHORT).show()
+
+            Intent(this@MainActivity, CategoryItemActivity::class.java).apply {
+                putExtra("category_item", category)
+
+                startActivity(this)
+            }
+        }
     }
 
     private fun intiailizeRecyclerView() {
