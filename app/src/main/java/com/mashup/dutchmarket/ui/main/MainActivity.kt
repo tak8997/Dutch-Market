@@ -5,16 +5,20 @@ import android.os.Bundle
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Toast
 import com.mashup.dutchmarket.R
 import com.mashup.dutchmarket.data.PopularPost
 import com.mashup.dutchmarket.data.Post
+import com.mashup.dutchmarket.ui.profile.ProfileActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.nav_header.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private val postAdapter: PostRecyclerAdapter by lazy {
         PostRecyclerAdapter()
@@ -103,9 +107,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initializeListener() {
-        nav_view.setNavigationItemSelectedListener {
-            when(it) {
+        user_nickname.setOnClickListener(this)
+        user_edit.setOnClickListener(this)
+    }
 
+    override fun onClick(view: View?) {
+        when(view?.id) {
+            R.id.user_nickname, R.id.user_edit -> {
+                startActivity(Intent(this, ProfileActivity::class.java))
             }
         }
     }

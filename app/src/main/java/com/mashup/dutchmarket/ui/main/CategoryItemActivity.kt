@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.mashup.dutchmarket.R
 import com.mashup.dutchmarket.data.Post
 import kotlinx.android.synthetic.main.activity_category_item.*
@@ -67,6 +68,9 @@ class CategoryItemActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId) {
             R.id.category_item_search -> {
+
+            }
+            android.R.id.home -> {
 
             }
         }

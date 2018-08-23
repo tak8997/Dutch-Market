@@ -18,4 +18,18 @@
   <string name="my_post">내가 쓴 글</string>
   <string name="joined_post">참여한 글</string>
   <string name="category">카테고리</string>
+  <string name="profile_email">학교 이메일</string>
+  <string name="profile_email_placeholder">tak8997@gmail.com</string>
+  <string name="profile_nickname">닉네임</string>
+  <string name="profile_nickname_placeholder">tak8997</string>
+  <string name="profile_phonenum">전화번호</string>
+  <string name="profile_phonenum_placeholder">010-8413-1196</string>
+  <string name="profile_username">예금주명</string>
+  <string name="profile_bank">은행명</string>
+  <string name="profile_bank_number">계좌번호</string>
+  <string name="profile_bank_number_placeholder">110-318-446664</string>
+  <string name="profile_username_placeholder">이병탁</string>
+  <string name="profile_security_setting">보안 설정</string>
+  <string name="profile_password_change">비밀번호 변경</string>
+  <string name="profile_title">개인정보 관리</string>
 </resources>
