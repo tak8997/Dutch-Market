@@ -6,18 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.mashup.dutchmarket.R
-import kotlinx.android.synthetic.main.item_navigation_list.view.*
+import kotlinx.android.synthetic.main.item_category_list.view.*
 
 
-internal class NavigationListAdapter(private val context: Context,
-                                     private val categories: MutableList<String>
+internal class CategoryListAdapter(private val context: Context,
+                                   private val categories: MutableList<String>
 
 ) : BaseAdapter() {
 
     override fun getView(position: Int, viewGroup: View?, parent: ViewGroup?): View {
         val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-        val view = inflater.inflate(R.layout.item_navigation_list, parent, false)
+        val view = inflater.inflate(R.layout.item_category_list, parent, false)
 
         view.category.text = categories[position]
 
