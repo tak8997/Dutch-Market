@@ -3,6 +3,7 @@ package com.mashup.dutchmarket
 import android.app.Activity
 import android.app.Application
 import com.mashup.dutchmarket.di.DaggerApplicationComponent
+import com.squareup.leakcanary.LeakCanary
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -21,6 +22,18 @@ internal class DutchMarket : Application(), HasActivityInjector {
         super.onCreate()
         instance = this
 
+        intializeDagger()
+        intializeLeakCanary()
+    }
+
+    private fun intializeLeakCanary() {
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return
+        }
+        LeakCanary.install(this)
+    }
+
+    private fun intializeDagger() {
         DaggerApplicationComponent
                 .builder()
                 .create(this)
