@@ -109,6 +109,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun initializeListener() {
         user_nickname.setOnClickListener(this)
         user_edit.setOnClickListener(this)
+        add_post.setOnClickListener {
+            startActivity(Intent(this, CategorySelectActivity::class.java))
+        }
     }
 
     override fun onClick(view: View?) {
