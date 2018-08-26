@@ -1,12 +1,10 @@
 package com.mashup.dutchmarket.ui.main
 
-import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -15,6 +13,9 @@ import com.mashup.dutchmarket.DutchMarket
 import com.mashup.dutchmarket.R
 import kotlinx.android.synthetic.main.activity_category_select.*
 import kotlinx.android.synthetic.main.item_category_list.view.*
+import android.support.v7.widget.DividerItemDecoration
+import com.mashup.dutchmarket.extension.paddingInPixel
+
 
 class CategorySelectActivity : AppCompatActivity() {
 
@@ -34,6 +35,7 @@ class CategorySelectActivity : AppCompatActivity() {
     private fun intializeRecycler() {
         with(category_select_recycler) {
             setHasFixedSize(true)
+            addItemDecoration(SimpleDividerItemDecoration())
 
             layoutManager = LinearLayoutManager(this@CategorySelectActivity)
             adapter = categorySelectAdapter
@@ -83,6 +85,7 @@ class CategorySelectActivity : AppCompatActivity() {
         override fun onBindViewHolder(viewholder: ViewHolder, position: Int) {
             viewholder.itemView.category.text = categories[position]
             viewholder.itemView.category.setTextColor(ContextCompat.getColor(DutchMarket.instance, R.color._000000))
+            viewholder.itemView.category.setPadding(50.paddingInPixel, 16.paddingInPixel, 0, 15.paddingInPixel)
         }
 
         fun addCategories(categories: MutableList<String>) {
