@@ -43,6 +43,10 @@ dependencies {
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rxadapter_version"
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
     implementation "com.jakewharton.rxrelay2:rxrelay:$rxrelay_version"
+    implementation "com.trello.rxlifecycle2:rxlifecycle:$rxlifecycle_version"
+    implementation "com.trello.rxlifecycle2:rxlifecycle-android:$rxlifecycle_version"
+    implementation "com.trello.rxlifecycle2:rxlifecycle-components:$rxlifecycle_version"
+    implementation "com.trello.rxlifecycle2:rxlifecycle-kotlin:$rxlifecycle_version"
 
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -63,6 +67,10 @@ dependencies {
 
     // log
     implementation "com.jakewharton.timber:timber:$timber_version"
+
+    // aac
+    implementation "android.arch.lifecycle:extensions:$arch_component_version"
+    kapt "android.arch.lifecycle:compiler:$arch_component_version"
 
     // leak
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
