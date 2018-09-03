@@ -1,9 +1,9 @@
 package com.mashup.dutchmarket.di
 
 import com.mashup.dutchmarket.DutchMarket
-import com.mashup.dutchmarket.repository.HttpService
-import com.mashup.dutchmarket.repository.Repository
-import com.mashup.dutchmarket.repository.RepositoryApi
+import com.mashup.dutchmarket.network.HttpService
+import com.mashup.dutchmarket.repository.SignUpRepository
+import com.mashup.dutchmarket.repository.SignUpRepositoryApi
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -53,5 +53,5 @@ internal abstract class ApplicationRepositoryModule {
 
     @Binds
     @Singleton
-    abstract fun provideApplicationRepository(repository: Repository) : RepositoryApi
+    abstract fun provideApplicationRepository(repository: SignUpRepository) : SignUpRepositoryApi
 }

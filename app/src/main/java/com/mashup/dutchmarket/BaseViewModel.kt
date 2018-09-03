@@ -5,15 +5,19 @@ import android.content.Intent
 import android.support.annotation.CallSuper
 import android.support.annotation.CheckResult
 import com.jakewharton.rxrelay2.PublishRelay
+import com.mashup.dutchmarket.repository.SignUpRepositoryApi
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import timber.log.Timber
+import javax.inject.Inject
 
 typealias RequestCode = Int
 typealias ResultCode = Int
 
 internal abstract class BaseViewModel : ViewModel() {
+
+    @Inject lateinit var repository: SignUpRepositoryApi
 
     private val intentRelay = PublishRelay.create<Intent>()
 
